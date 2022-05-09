@@ -1,0 +1,13 @@
+# /etc/systemd/system/astrad.service
+[Unit]
+Description=Astra Node
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+ExecStart=/root/go/bin/astrad start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=4096
