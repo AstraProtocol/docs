@@ -3,6 +3,14 @@
 # abort on errors
 set -e
 
+# get -m flag option
+while getopts m: flag
+do
+    case "${flag}" in
+        m) message=${OPTARG};;
+    esac
+done
+
 # build
 npm run docs:build
 
@@ -25,7 +33,7 @@ npm run docs:build
 
 git init
 git add -A
-git commit -m 'init && deploy'
+git commit -m "$message"
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:crypto-com/crypto-com.github.io.git master
