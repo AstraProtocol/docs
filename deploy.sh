@@ -31,6 +31,6 @@ git commit -m 'init && deploy'
 # git push -f git@github.com:crypto-com/crypto-com.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:AstraProtocol/docs.git master:gh-pages
+git push -f git@github.com/AstraProtocol/docs.git master:gh-pages
 
 cd -
