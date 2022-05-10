@@ -1,3 +1,30 @@
+---
+meta:
+  - name: "title"
+    content: Astra Running Nodes On Testnet
+  - name: "description"
+    content: Learn how to setup a Validator or a full node on Astra testnet astra_11110-1 in this technical documentation.
+  - name: "og:title"
+    content: Astra Running Nodes On Testnet
+  - name: "og:type"
+    content: Website
+  - name: "og:description"
+    content: Learn how to setup a Validator or a full node on Astra testnet astra_11110-1 in this technical documentation.
+  # - name: "og:image"
+  #   content: https://cronos.org/og-image.png
+  - name: "twitter:title"
+    content: Astra Running Nodes On Testnet
+  - name: "twitter:site"
+    content: "@AstraProtocol"
+  - name: "twitter:card"
+    content: summary_large_image
+  - name: "twitter:description"
+    content: Learn how to setup a Validator or a full node on Astra testnet astra_11110-1 in this technical documentation.
+#   - name: "twitter:image"
+#     content: https://cronos.org/og-image.png
+# canonicalUrl: https://cronos.org/docs/getting-started/cronos-testnet.html
+---
+
 
 # Astra Testnet: Running Nodes
 
@@ -217,4 +244,3 @@ It should begin fetching blocks from the other peers. Please wait until it is fu
 ## Astra testnet faucet and explorer
 
 - You can lookup data within the `astra_11110-1` network by the [explorer](https://testnet.astranaut.network/astra);
-
