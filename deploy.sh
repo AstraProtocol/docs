@@ -3,14 +3,6 @@
 # abort on errors
 set -e
 
-# get -m flag option
-while getopts m: flag
-do
-    case "${flag}" in
-        m) message=${OPTARG};;
-    esac
-done
-
 # build
 npm run docs:build
 
@@ -26,19 +18,19 @@ npm run docs:build
 
 
 # navigate into the build output directory
-# cd .vuepress/dist
+cd docs/.vuepress/dist
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 
 git init
 git add -A
-git commit -m "$message"
+git commit -m "deploy"
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:crypto-com/crypto-com.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/AstraProtocol/docs.git main:gh-pages
+git push -f https://github.com/AstraProtocol/docs.git master:gh-pages
 
 cd -
