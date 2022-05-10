@@ -1,11 +1,11 @@
-FROM node:latest as build-stage
+FROM node:16.15.0-alpine3.14 as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+COPY yarn.lock ./
 COPY ./ .
-RUN npm run build
+RUN yarn docs:build
 
 FROM nginx as production-stage
 RUN mkdir /app
-COPY --from=build-stage /app/dist /app
+COPY --from=build-stage /app/docs/.vuepress/dist /app
 COPY nginx.conf /etc/nginx/nginx.conf
