@@ -159,5 +159,4 @@ export default {
 .docs-layout
   max-width $MQWide
   min-height 100vh - ($footerHeight + $navbarHeight)
-  margin: 0 auto
 </style>
