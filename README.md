@@ -43,7 +43,20 @@ module.exports = {
 
   themeConfig: {
     ...,
-
+    nav: [
+      {
+        text: "Astra Chain", # Your directory name
+        items: [
++          {
++            text: "[Add_Your_New_Title_Name_Here]",
++            link: "[Add_Your_New_File_Path_Here]"
++          },
+          ...,
+        ]
+      },
+      ...,
+    ],
+    ...,
     sidebar: {
       '/getting-started/': [
         '',
@@ -54,7 +67,7 @@ module.exports = {
 +      "/chain-details/": [ # Tag of new directory
 +        '[Add_Your_New_File_Name_Here]' # or here
 +      ],
-    }
+    },
   },
   ...,
 }
