@@ -185,8 +185,8 @@ module.exports = {
   },
   base: "/docs/",
   head: [
-    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon32.png" }],
-    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon16.png" }],
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/astra.svg" }],
+    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/astra.svg" }],
     // [
     //   'script',
     //   {},
