@@ -12,12 +12,14 @@
           :src="$withBase($site.themeConfig.logo)"
           :alt="$siteTitle"
         >
+        <b class="narrow-hide">ASTRA</b>
         <img
           class="logoicon wide-hide"
           v-if="$site.themeConfig.logo"
-          :src="$withBase('/logo-icon-white.svg')"
+          :src="$withBase($site.themeConfig.logo)"
           :alt="$siteTitle"
         >
+        <b class="wide-hide">ASTRA</b>
         <span
           ref="siteName"
           class="site-name"
@@ -117,8 +119,9 @@ $searchBoxInputColor = #0b1426
     display flex
     justify-content space-between
   .home-link
-    display block
-    padding 6px 0
+    display flex
+    align-items center
+    // padding 6px 0
     float left
   a, span, img
     display inline-block
