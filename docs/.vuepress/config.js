@@ -3,7 +3,7 @@ module.exports = {
   description: "View our latest chain documentation on Astra. Sign up to our newsletter to get the latest updates and read the documentation to connect to our Testnet.",
   themeConfig: {
     navbar: true,
-    // logo: '/astra.svg',
+    logo: '/astra.svg',
     nav: [{
       text: "Home",
       link: "/"
