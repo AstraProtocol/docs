@@ -30,7 +30,7 @@ meta:
 
 The latest https://astranaut.network/ EVM Chain Testnet has been named as **Astra**.
 
-This is a detailed documentation for setting up a Validator or a full node on Astra testnet `astra_11110-1`.
+This is a detailed documentation for setting up a Validator or a full node on Astra testnet `astra_11112-1`.
 
 ## Pre-requisites
 
@@ -87,7 +87,7 @@ astrad version
 
 ### Step 2-0 (Optional) Clean up the old blockchain data
 
-- If you have joined `astra_11110-1` before, you would have to clean up the old blockchain data and start over again, it can be done by running:
+- If you have joined `astra_11112-1` before, you would have to clean up the old blockchain data and start over again, it can be done by running:
 
   ```bash
   $ ./astrad unsafe-reset-all
@@ -106,7 +106,7 @@ Before kick-starting your node, we will have to configure your node so that it c
 - First of all, you can initialize astrad by:
 
   ```bash
-    $ ./astrad init [moniker] --chain-id astra_11110-1
+    $ ./astrad init [moniker] --chain-id astra_11112-1
   ```
 
   This `moniker` will be the displayed id of your node when connected to the Astra network.
@@ -114,7 +114,7 @@ Before kick-starting your node, we will have to configure your node so that it c
   The example below shows how to initialize a node named `pegasus-node` :
 
   ```bash
-    $ ./astrad init pegasus-node --chain-id astra_11110-1
+    $ ./astrad init pegasus-node --chain-id astra_11112-1
   ```
 
 
@@ -123,7 +123,7 @@ Before kick-starting your node, we will have to configure your node so that it c
 - Download and replace the Astra Testnet `genesis.json` by:
 
   ```bash
-  $ curl https://raw.githubusercontent.com/AstraProtocol/testnets/main/astra_11110-1/genesis.json > ~/.astra/config/genesis.json
+  $ curl https://raw.githubusercontent.com/AstraProtocol/testnets/main/astra_11112-1/genesis.json > ~/.astra/config/genesis.json
   ```
 
 - Verify sha256sum checksum of the downloaded `genesis.json`. You should see `OK!` if the sha256sum checksum matches.
@@ -150,10 +150,15 @@ Before kick-starting your node, we will have to configure your node so that it c
   $ sed -i.bak -E 's#^(minimum-gas-prices[[:space:]]+=[[:space:]]+).*$#\1"0aastra"#' ~/.astra/config/app.toml
   ```
 
-- For network configuration, in `~/.astra/config/config.toml`, validator nodes need to modify the configurations of `persistent_peers`. For non-validator full nodes, only `persistent_peers` modification is required:
+- For network configuration, in `~/.astra/config/config.toml`, validator nodes need to modify the configurations of `seeds`. For non-validator full nodes, only `seeds` modification is required:
   ```bash
-  $ sed -i.bak -E 's#^(persistent_peers[[:space:]]+=[[:space:]]+).*$#\1""#'
-  $ sed -i.bak -E 's#^(timeout_commit[[:space:]]+=[[:space:]]+).*$#\1"1500ms"#'
+  $ sed -i.bak -E 's#^(seeds[[:space:]]+=[[:space:]]+).*$#\1"a7adbfe36dc633c3c93e7deb8a6e4c0d22e821a8@167.71.213.62:26656,68997d1ef6b0a50be156d77fac98ac54e0a73604@157.245.192.163:26656,b44d804ed5d1308c0e31cbb297510d3e259dfcd4@157.245.206.123:26656,b71f816ebd24bbfaa79f2ed820f6cee0aee04aff@167.172.76.193:26656"#'
+  $ sed -i.bak -E 's#^(timeout_commit[[:space:]]+=[[:space:]]+).*$#\1"3s"#'
+  $ sed -i.bak -E 's#^(timeout_propose[[:space:]]+=[[:space:]]+).*$#\1"2s"#'
+  $ sed -i.bak -E 's#^(timeout_propose_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#'
+  $ sed -i.bak -E 's#^(timeout_precommit[[:space:]]+=[[:space:]]+).*$#\1"500ms"#'
+  $ sed -i.bak -E 's#^(timeout_precommit_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#'
+  $ sed -i.bak -E 's#^(timeout_prevote_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#'
   ```
 
 ::: tip NOTE
@@ -243,4 +248,4 @@ It should begin fetching blocks from the other peers. Please wait until it is fu
 
 ## Astra testnet faucet and explorer
 
-- You can lookup data within the `astra_11110-1` network by the [explorer](https://testnet.astranaut.network/astra);
+- You can lookup data within the `astra_11112-1` network by the [explorer](https://testnet.astranaut.network/astra);
