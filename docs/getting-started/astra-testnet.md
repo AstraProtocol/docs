@@ -159,7 +159,6 @@ Before kick-starting your node, we will have to configure your node so that it c
   $ sed -i.bak -E 's#^(timeout_precommit[[:space:]]+=[[:space:]]+).*$#\1"500ms"#' ~/.astra/config/config.toml
   $ sed -i.bak -E 's#^(timeout_precommit_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
   $ sed -i.bak -E 's#^(timeout_prevote_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
-  ```
 
 ::: tip NOTE
 
