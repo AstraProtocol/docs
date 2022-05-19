@@ -247,6 +247,50 @@ It should begin fetching blocks from the other peers. Please wait until it is fu
   $ astrad status 2>&1 | jq '.SyncInfo.latest_block_height'
   ```
 
+## Step 4. Joining the network as a validator: Send a create-validator transaction
+Once the node is synced, we are now ready to send a create-validator transaction and join the network, for example:
+
+```bash
+  $ astrad tx staking create-validator  \
+	--amount=1250astra \
+	--pubkey=$(astrad tendermint show-validator) \
+	--moniker=moon \
+	--chain-id=astra_11112-1  \
+	--commission-rate="0.056"  \
+	--commission-max-rate="0.125" \
+	--commission-max-change-rate="0.01"   \
+	--min-self-delegation="10000000"   \
+	--gas="1000000"   \
+	--gas-prices="25aastra" \
+	--from=<your_key>
+  ```
+
+
+
+::: tip You will be required to insert the following:
+
+- `--from`: The `astra...` address or the key name that holds your funds for initial delegation;
+- `--amount`: The amount of self-delegation provided to the validator as an initial staking;
+- `--pubkey`: The validator public key;
+- `--moniker`: A moniker (name) for your validator node;
+- `--security-contact`: Security contact email/contact method, it is **strongly recommended** to provide an email address for receiving important messages related to validator operation in the future;
+- `--chain-id=`: The chain-id of astra testnet/mainnet
+- `--commission-rate`: The commission rate charge on the delegator;
+- `--commission-max-rate`: The upper bound of the commission rate;
+- `--commission-max-change-rate`: The maximum daily increase of the validator commission. Please note this parameter cannot be changed after create-validator is processed;
+- `--min-self-delegation`: The lower threshold of validator's self-delegation amount, if the self-delegation drops below this number, all staked funds to the validator will be automatically unbonded and the validator will be inactive.
+  :::
+
+### Step 4.1. Check your validator status
+Once the `create-validator` transaction completes, you can check if your validator has been added to the validator set:
+
+```bash
+$ astrad tendermint show-address
+## [astravalcons... address] ##
+$ astrad query tendermint-validator-set | grep -c [astravalcons...]
+## 1 = Yes; 0 = Not yet added ##
+```
 ## Astra testnet faucet and explorer
 
 - You can lookup data within the `astra_11112-1` network by the [explorer](https://testnet.astranaut.network/astra);
+
