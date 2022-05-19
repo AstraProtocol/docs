@@ -90,13 +90,13 @@ astrad version
 - If you have joined `astra_11112-1` before, you would have to clean up the old blockchain data and start over again, it can be done by running:
 
   ```bash
-  $ ./astrad unsafe-reset-all
+  $ astrad unsafe-reset-all
   ```
 
   and remove the old genesis file by
 
   ```bash
-  $ rm ~/.astra/config/genesis.json
+  $ rm ~/.astrad/config/genesis.json
   ```
 
 Before kick-starting your node, we will have to configure your node so that it connects to the Astra testnet:
@@ -106,7 +106,7 @@ Before kick-starting your node, we will have to configure your node so that it c
 - First of all, you can initialize astrad by:
 
   ```bash
-    $ ./astrad init [moniker] --chain-id astra_11112-1
+    $ astrad init [moniker] --chain-id astra_11112-1
   ```
 
   This `moniker` will be the displayed id of your node when connected to the Astra network.
@@ -114,7 +114,7 @@ Before kick-starting your node, we will have to configure your node so that it c
   The example below shows how to initialize a node named `pegasus-node` :
 
   ```bash
-    $ ./astrad init pegasus-node --chain-id astra_11112-1
+    $ astrad init pegasus-node --chain-id astra_11112-1
   ```
 
 
@@ -123,13 +123,13 @@ Before kick-starting your node, we will have to configure your node so that it c
 - Download and replace the Astra Testnet `genesis.json` by:
 
   ```bash
-  $ curl https://raw.githubusercontent.com/AstraProtocol/testnets/main/astra_11112-1/genesis.json > ~/.astra/config/genesis.json
+  $ curl https://raw.githubusercontent.com/AstraProtocol/testnets/main/astra_11112-1/genesis.json > ~/.astrad/config/genesis.json
   ```
 
 - Verify sha256sum checksum of the downloaded `genesis.json`. You should see `OK!` if the sha256sum checksum matches.
 
   ```bash
-  $ if [[ $(sha256sum ~/.astra/config/genesis.json | awk '{print $1}') = "" ]]; then echo "OK"; else echo "MISMATCHED"; fi;
+  $ if [[ $(sha256sum ~/.astrad/config/genesis.json | awk '{print $1}') = "0a9df927a5564b55544fa87d6e33aef501bcd68e399603b4990f9c7a661af184" ]]; then echo "OK"; else echo "MISMATCHED"; fi;
 
   OK!
   ```
@@ -144,21 +144,23 @@ Before kick-starting your node, we will have to configure your node so that it c
 
       :::
 
-- (Validator node only) In `~/.astra/config/app.toml`, update minimum gas price to avoid [transaction spamming](https://github.com/cosmos/cosmos-sdk/issues/4527)
+- (Validator node only) In `~/.astrad/config/app.toml`, update minimum gas price to avoid [transaction spamming](https://github.com/cosmos/cosmos-sdk/issues/4527)
 
   ```bash
-  $ sed -i.bak -E 's#^(minimum-gas-prices[[:space:]]+=[[:space:]]+).*$#\1"0aastra"#' ~/.astra/config/app.toml
+  $ sed -i.bak -E 's#^(minimum-gas-prices[[:space:]]+=[[:space:]]+).*$#\1"0aastra"#' ~/.astrad/config/app.toml
   ```
 
-- For network configuration, in `~/.astra/config/config.toml`, validator nodes need to modify the configurations of `seeds`. For non-validator full nodes, only `seeds` modification is required:
+- For network configuration, in `~/.astrad/config/config.toml`, validator nodes need to modify the configurations of `seeds`. For non-validator full nodes, only `seeds` modification is required:
   ```bash
-  $ sed -i.bak -E 's#^(seeds[[:space:]]+=[[:space:]]+).*$#\1"a7adbfe36dc633c3c93e7deb8a6e4c0d22e821a8@167.71.213.62:26656,68997d1ef6b0a50be156d77fac98ac54e0a73604@157.245.192.163:26656,b44d804ed5d1308c0e31cbb297510d3e259dfcd4@157.245.206.123:26656,b71f816ebd24bbfaa79f2ed820f6cee0aee04aff@167.172.76.193:26656"#' ~/.astra/config/config.toml
-  $ sed -i.bak -E 's#^(timeout_commit[[:space:]]+=[[:space:]]+).*$#\1"3s"#' ~/.astra/config/config.toml
-  $ sed -i.bak -E 's#^(timeout_propose[[:space:]]+=[[:space:]]+).*$#\1"2s"#' ~/.astra/config/config.toml
-  $ sed -i.bak -E 's#^(timeout_propose_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
-  $ sed -i.bak -E 's#^(timeout_precommit[[:space:]]+=[[:space:]]+).*$#\1"500ms"#' ~/.astra/config/config.toml
-  $ sed -i.bak -E 's#^(timeout_precommit_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
-  $ sed -i.bak -E 's#^(timeout_prevote_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
+  $ sed -i.bak -E 's#^(seeds[[:space:]]+=[[:space:]]+).*$#\1"a7adbfe36dc633c3c93e7deb8a6e4c0d22e821a8@167.71.213.62:26656,68997d1ef6b0a50be156d77fac98ac54e0a73604@157.245.192.163:26656,b44d804ed5d1308c0e31cbb297510d3e259dfcd4@157.245.206.123:26656,b71f816ebd24bbfaa79f2ed820f6cee0aee04aff@167.172.76.193:26656"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_commit[[:space:]]+=[[:space:]]+).*$#\1"3s"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_propose[[:space:]]+=[[:space:]]+).*$#\1"2s"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_propose_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_precommit[[:space:]]+=[[:space:]]+).*$#\1"500ms"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_precommit_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_prevote_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_prevote[[:space:]]+=[[:space:]]+).*$#\1"500ms"#' ~/.astrad/config/config.toml
+  ```
 
 ::: tip NOTE
 
@@ -179,7 +181,7 @@ Once the `astrad` has been configured, we are ready to start the node and sync t
 - Start astrad, e.g.:
 
 ```bash
-  $ ./astrad start
+  $ astrad start
 ```
 
 ::: tip Remarks:
@@ -234,7 +236,7 @@ It should begin fetching blocks from the other peers. Please wait until it is fu
 - You can query the node syncing status by
 
   ```bash
-  $ ./astrad status 2>&1 | jq '.SyncInfo.catching_up'
+  $ astrad status 2>&1 | jq '.SyncInfo.catching_up'
   ```
 
   If the above command returns `false`, It means that your node **is fully synced**; otherwise, it returns `true` and implies your node is still catching up.
@@ -242,7 +244,7 @@ It should begin fetching blocks from the other peers. Please wait until it is fu
 - You can check your node's progress (in terms of block height) by
 
   ```bash
-  $ ./astrad status 2>&1 | jq '.SyncInfo.latest_block_height'
+  $ astrad status 2>&1 | jq '.SyncInfo.latest_block_height'
   ```
 
 ## Astra testnet faucet and explorer
