@@ -152,14 +152,13 @@ Before kick-starting your node, we will have to configure your node so that it c
 
 - For network configuration, in `~/.astra/config/config.toml`, validator nodes need to modify the configurations of `seeds`. For non-validator full nodes, only `seeds` modification is required:
   ```bash
-  $ sed -i.bak -E 's#^(seeds[[:space:]]+=[[:space:]]+).*$#\1"a7adbfe36dc633c3c93e7deb8a6e4c0d22e821a8@167.71.213.62:26656,68997d1ef6b0a50be156d77fac98ac54e0a73604@157.245.192.163:26656,b44d804ed5d1308c0e31cbb297510d3e259dfcd4@157.245.206.123:26656,b71f816ebd24bbfaa79f2ed820f6cee0aee04aff@167.172.76.193:26656"#'
-  $ sed -i.bak -E 's#^(timeout_commit[[:space:]]+=[[:space:]]+).*$#\1"3s"#'
-  $ sed -i.bak -E 's#^(timeout_propose[[:space:]]+=[[:space:]]+).*$#\1"2s"#'
-  $ sed -i.bak -E 's#^(timeout_propose_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#'
-  $ sed -i.bak -E 's#^(timeout_precommit[[:space:]]+=[[:space:]]+).*$#\1"500ms"#'
-  $ sed -i.bak -E 's#^(timeout_precommit_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#'
-  $ sed -i.bak -E 's#^(timeout_prevote_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#'
-  ```
+  $ sed -i.bak -E 's#^(seeds[[:space:]]+=[[:space:]]+).*$#\1"a7adbfe36dc633c3c93e7deb8a6e4c0d22e821a8@167.71.213.62:26656,68997d1ef6b0a50be156d77fac98ac54e0a73604@157.245.192.163:26656,b44d804ed5d1308c0e31cbb297510d3e259dfcd4@157.245.206.123:26656,b71f816ebd24bbfaa79f2ed820f6cee0aee04aff@167.172.76.193:26656"#' ~/.astra/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_commit[[:space:]]+=[[:space:]]+).*$#\1"3s"#' ~/.astra/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_propose[[:space:]]+=[[:space:]]+).*$#\1"2s"#' ~/.astra/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_propose_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_precommit[[:space:]]+=[[:space:]]+).*$#\1"500ms"#' ~/.astra/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_precommit_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
+  $ sed -i.bak -E 's#^(timeout_prevote_delta[[:space:]]+=[[:space:]]+).*$#\1"250ms"#' ~/.astra/config/config.toml
 
 ::: tip NOTE
 
