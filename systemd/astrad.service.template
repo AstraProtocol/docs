@@ -1,0 +1,17 @@
+# /etc/systemd/system/astrad.service
+[Unit]
+Description=AstraDeamon
+ConditionPathExists=<ASTRAD_BINARY>
+After=network.target
+
+[Service]
+Type=simple
+User=<ASTRAD_USER>
+WorkingDirectory=<ASTRAD_BINARY_DIR>
+ExecStart=<ASTRAD_BINARY> start --home <ASTRAD_USER_HOME>/.astrad
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
