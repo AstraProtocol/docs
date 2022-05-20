@@ -257,7 +257,6 @@ It should begin fetching blocks from the other peers. Please wait until it is fu
 
   ```bash
   $ astrad status 2>&1 | jq '.SyncInfo.latest_block_height'
-  ```
 
 ## Step 4. Joining the network as a validator: Send a create-validator transaction
 Once the node is synced, we are now ready to send a create-validator transaction and join the network, for example:
@@ -276,8 +275,6 @@ Once the node is synced, we are now ready to send a create-validator transaction
 	--gas-prices="25aastra" \
 	--from=<your_key>
   ```
-
-
 
 ::: tip You will be required to insert the following:
 
