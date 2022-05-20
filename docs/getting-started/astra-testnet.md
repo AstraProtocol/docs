@@ -36,7 +36,8 @@ This is a detailed documentation for setting up a Validator or a full node on As
 
 ### Supported OS
 
-We officially support macOS, Windows and Linux only. Other platforms may work but there is no guarantee. We will extend our support to other platforms after we have stabilized our current architecture.
+We officially support macOS, Windows and Linux only. Other platforms may work but there is no guarantee. 
+We will extend our support to other platforms after we have stabilized our current architecture.
 
 ### Prepare your machine
 
@@ -176,6 +177,17 @@ Furthermore, you may want to run full nodes
 as sentries (see [Tendermint](https://docs.tendermint.com/master/tendermint-core/running-in-production.html)), restrict your validator connections to only connect to your full nodes, test secure storage of validator keys etc.
 :::
 
+### Step 3-1. Create a new key and address (Validator node only)
+Run the followings to create a new key. For example, you can create a key with the name Default by:
+
+```bash
+astrad keys add Default
+```
+
+You should obtain an address with astra prefix, e.g. astra100esvggwlelc5zmx9qp6f6xpyhkqvuzn9fpkw6. This will be the address for performing transactions.
+
+### Step 3-2. Run everything
+
 Once the `astrad` has been configured, we are ready to start the node and sync the blockchain data:
 
 - Start astrad, e.g.:
@@ -245,7 +257,6 @@ It should begin fetching blocks from the other peers. Please wait until it is fu
 
   ```bash
   $ astrad status 2>&1 | jq '.SyncInfo.latest_block_height'
-  ```
 
 ## Step 4. Joining the network as a validator: Send a create-validator transaction
 Once the node is synced, we are now ready to send a create-validator transaction and join the network, for example:
@@ -264,8 +275,6 @@ Once the node is synced, we are now ready to send a create-validator transaction
 	--gas-prices="25aastra" \
 	--from=<your_key>
   ```
-
-
 
 ::: tip You will be required to insert the following:
 
