@@ -222,6 +222,36 @@ $ ulimit -Sn 4096
   $ journalctl -u astrad -f
 ```
 
+If you have messaged
+
+`No journal files were found.
+`
+
+Edit journald.conf
+
+```bash
+sudo nano /etc/systemd/journald.conf
+```
+
+Original Config
+```bash
+[Journal]
+#Storage=auto
+...
+```
+
+New Config
+```bash
+[Journal]
+Storage=volatile
+...
+```
+
+After a restart of journalctl, all users could view their respective logs:
+```bash
+sudo systemctl restart systemd-journald
+```
+
 :::details Example: /etc/systemd/system/astrad.service created by script
 
 ```bash
