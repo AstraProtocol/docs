@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Learn how to setup a Validator or a full node on Astra testnet astra_11110-1 in this technical documentation.">
     
-    <link rel="preload" href="/docs/assets/css/0.styles.c5c04b0a.css" as="style"><link rel="preload" href="/docs/assets/js/app.72e0bc5d.js" as="script"><link rel="preload" href="/docs/assets/js/4.2efe625e.js" as="script"><link rel="preload" href="/docs/assets/js/2.11034988.js" as="script"><link rel="preload" href="/docs/assets/js/1.c909d75b.js" as="script"><link rel="preload" href="/docs/assets/js/9.2a413547.js" as="script"><link rel="prefetch" href="/docs/assets/js/5.67e10b4b.js"><link rel="prefetch" href="/docs/assets/js/6.314cb7a1.js"><link rel="prefetch" href="/docs/assets/js/7.f1e7a03b.js"><link rel="prefetch" href="/docs/assets/js/8.4b640f66.js">
+    <link rel="preload" href="/docs/assets/css/0.styles.c5c04b0a.css" as="style"><link rel="preload" href="/docs/assets/js/app.e8431515.js" as="script"><link rel="preload" href="/docs/assets/js/4.2efe625e.js" as="script"><link rel="preload" href="/docs/assets/js/2.11034988.js" as="script"><link rel="preload" href="/docs/assets/js/1.c909d75b.js" as="script"><link rel="preload" href="/docs/assets/js/9.cf280c35.js" as="script"><link rel="prefetch" href="/docs/assets/js/5.67e10b4b.js"><link rel="prefetch" href="/docs/assets/js/6.314cb7a1.js"><link rel="prefetch" href="/docs/assets/js/7.f1e7a03b.js"><link rel="prefetch" href="/docs/assets/js/8.9b4a9bf3.js">
     <link rel="stylesheet" href="/docs/assets/css/0.styles.c5c04b0a.css">
   </head>
   <body>
@@ -62,6 +62,14 @@ $ <span class="token builtin class-name">ulimit</span> -Sn <span class="token nu
   $ <span class="token function">sudo</span> systemctl start astrad
   <span class="token comment"># view log</span>
   $ journalctl -u astrad -f
+</code></pre></div><p>If you have messaged</p> <p><code>No journal files were found.</code></p> <p>Edit journald.conf</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">nano</span> /etc/systemd/journald.conf
+</code></pre></div><p>Original Config</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>Journal<span class="token punctuation">]</span>
+<span class="token comment">#Storage=auto</span>
+<span class="token punctuation">..</span>.
+</code></pre></div><p>New Config</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>Journal<span class="token punctuation">]</span>
+<span class="token assign-left variable">Storage</span><span class="token operator">=</span>volatile
+<span class="token punctuation">..</span>.
+</code></pre></div><p>After a restart of journalctl, all users could view their respective logs:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> systemctl restart systemd-journald
 </code></pre></div><details class="custom-block details"><summary>Example: /etc/systemd/system/astrad.service created by script</summary> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># /etc/systemd/system/astrad.service</span>
 <span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
 <span class="token assign-left variable">Description</span><span class="token operator">=</span>Astra Node
@@ -96,6 +104,6 @@ $ <span class="token builtin class-name">ulimit</span> -Sn <span class="token nu
 $ astrad query tendermint-validator-set <span class="token operator">|</span> <span class="token function">grep</span> -c <span class="token punctuation">[</span>astravalcons<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 <span class="token comment">## 1 = Yes; 0 = Not yet added ##</span>
 </code></pre></div><h2 id="astra-testnet-faucet-and-explorer"><a href="#astra-testnet-faucet-and-explorer" class="header-anchor">#</a> Astra testnet faucet and explorer</h2> <ul><li>You can lookup data within the <code>astra_11112-1</code> network by the <a href="https://testnet.astranaut.network/astra" target="_blank" rel="noopener noreferrer">explorer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>;</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div></div><div class="global-ui"></div></div>
-    <script src="/docs/assets/js/app.72e0bc5d.js" defer></script><script src="/docs/assets/js/4.2efe625e.js" defer></script><script src="/docs/assets/js/2.11034988.js" defer></script><script src="/docs/assets/js/1.c909d75b.js" defer></script><script src="/docs/assets/js/9.2a413547.js" defer></script>
+    <script src="/docs/assets/js/app.e8431515.js" defer></script><script src="/docs/assets/js/4.2efe625e.js" defer></script><script src="/docs/assets/js/2.11034988.js" defer></script><script src="/docs/assets/js/1.c909d75b.js" defer></script><script src="/docs/assets/js/9.cf280c35.js" defer></script>
   </body>
 </html>
