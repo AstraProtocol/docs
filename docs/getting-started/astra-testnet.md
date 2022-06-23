@@ -75,6 +75,7 @@ Clone and build using `git`:
 ```bash
 git clone https://github.com/AstraProtocol/astra.git
 cd astra
+git checkout v0.2.1
 make install
 ```
 
@@ -153,7 +154,7 @@ Before kick-starting your node, we will have to configure your node so that it c
 
 - For network configuration, in `~/.astrad/config/config.toml`, validator nodes need to modify the configurations of `seeds`. For non-validator full nodes, only `seeds` modification is required:
   ```bash
-  $ sed -i.bak -E 's#^(seeds[[:space:]]+=[[:space:]]+).*$#\1"a7adbfe36dc633c3c93e7deb8a6e4c0d22e821a8@167.71.213.62:26656,68997d1ef6b0a50be156d77fac98ac54e0a73604@157.245.192.163:26656,b44d804ed5d1308c0e31cbb297510d3e259dfcd4@157.245.206.123:26656,b71f816ebd24bbfaa79f2ed820f6cee0aee04aff@167.172.76.193:26656"#' ~/.astrad/config/config.toml
+  $ sed -i.bak -E 's#^(seeds[[:space:]]+=[[:space:]]+).*$#\1"be4bd4da880cc363eb2fac8d832348011c0cb4ef@165.232.161.147:26656"#' ~/.astrad/config/config.toml
   $ sed -i.bak -E 's#^(timeout_commit[[:space:]]+=[[:space:]]+).*$#\1"3s"#' ~/.astrad/config/config.toml
   $ sed -i.bak -E 's#^(timeout_propose[[:space:]]+=[[:space:]]+).*$#\1"3s"#' ~/.astrad/config/config.toml
   $ sed -i.bak -E 's#^(timeout_propose_delta[[:space:]]+=[[:space:]]+).*$#\1"500ms"#' ~/.astrad/config/config.toml
