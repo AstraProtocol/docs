@@ -3,15 +3,15 @@ meta:
   - name: "title"
     content: Astra Running Nodes On Testnet
   - name: "description"
-    content: Learn how to setup a Validator or a full node on Astra testnet astra_11110-1 in this technical documentation.
+    content: Learn how to setup a Validator or a full node on Astra testnet astra_11112-1 in this technical documentation.
   - name: "og:title"
     content: Astra Running Nodes On Testnet
   - name: "og:type"
     content: Website
   - name: "og:description"
-    content: Learn how to setup a Validator or a full node on Astra testnet astra_11110-1 in this technical documentation.
-  # - name: "og:image"
-  #   content: https://cronos.org/og-image.png
+    content: Learn how to setup a Validator or a full node on Astra testnet astra_11112-1 in this technical documentation.
+  - name: "og:image"
+    content: https://astraprotocol.github.io/docs/preview.png
   - name: "twitter:title"
     content: Astra Running Nodes On Testnet
   - name: "twitter:site"
@@ -19,10 +19,10 @@ meta:
   - name: "twitter:card"
     content: summary_large_image
   - name: "twitter:description"
-    content: Learn how to setup a Validator or a full node on Astra testnet astra_11110-1 in this technical documentation.
-#   - name: "twitter:image"
-#     content: https://cronos.org/og-image.png
-# canonicalUrl: https://cronos.org/docs/getting-started/cronos-testnet.html
+    content: Learn how to setup a Validator or a full node on Astra testnet astra_11112-1 in this technical documentation.
+  - name: "twitter:image"
+    content: https://astraprotocol.github.io/docs/preview.png
+canonicalUrl: https://astraprotocol.github.io/docs/getting-started/astra-testnet.html
 ---
 
 

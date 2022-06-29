@@ -20,10 +20,10 @@ module.exports = {
           //   text: "astra Mainnet Beta",
           //   link: "/getting-started/astra-mainnet"
           // },
-          // {
-          //   text: "Using Metamask",
-          //   link: "/getting-started/metamask"
-          // },
+          {
+            text: "Using Metamask",
+            link: "/getting-started/metamask"
+          },
           {
             text: "Astra Testnet",
             link: "/getting-started/astra-testnet"
@@ -140,7 +140,7 @@ module.exports = {
     sidebar: {
       "/getting-started/": [
         // "astra-mainnet",
-        // "metamask",
+        "metamask",
         "astra-testnet",
         // "local-devnet",
         // "security-checklist.md",
