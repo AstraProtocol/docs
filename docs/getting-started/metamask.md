@@ -71,10 +71,10 @@ Let’s set up!
 ### Testnet
 
 <b>Network Name:</b> Astra Testnet <br />
-<b>New RPC URL:</b> [https://evm.astranaut.network/](https://evm.astranaut.network/) <br />
-<b>ChainID:</b> 11112 <br />
+<b>New RPC URL:</b> [https://rpc.astranaut.dev/](https://rpc.astranaut.dev/) <br />
+<b>ChainID:</b> 11115 <br />
 <b>Symbol:</b> ASA <br />
-<b>Block Explorer URL:</b> [https://blockscout.astranaut.network/](https://blockscout.astranaut.network/) <br />
+<b>Block Explorer URL:</b> [https://explorer.astranaut.dev/](https://explorer.astranaut.dev/) <br />
 
 ![Network Info](./assets/metamask/settings-5.png)
 <h4 align = "center"><i>Network Info</i></h4>
@@ -89,3 +89,14 @@ After saving the network config, we should be able to see the token in your addr
 Note that the address format in **Astra** is in there form of bech32 ```astra...```
 
 You can convert your address from ETH to Astra and vice versa at [here](https://astra-utilities.vercel.app/)
+
+
+## Astra Faucet
+Get testnet token at [here](https://faucet.astranaut.dev/)
+
+![Faucet](./assets/metamask/faucet.png)
+
+## Astra Explorer
+After creating a smart contract or interacting with it, you can go [here](https://explorer.astranaut.dev/) and find some helpful information (like etherscan, bscscan…)
+
+![Explorer](./assets/metamask/explorer.png)

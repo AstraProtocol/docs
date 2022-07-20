@@ -4,11 +4,7 @@
       <div class="main">
         <div class="logo">
           <a href="/">
-            <img
-              class="footer-logo"
-              :src="$withBase('/astra.svg')"
-              alt="logo-icon-white"
-            />
+            <img class="footer-logo" :src="$withBase('/astra.svg')" alt="logo-icon-white" />
           </a>
         </div>
         <div class="navLinks">
@@ -54,16 +50,16 @@
           <div class="column">
             <h3>Explorer</h3>
             <div class="link">
-              <a href="https://blockscout.astranaut.network/">
+              <a href="https://explorer.astranaut.dev/">
                 Explorer
               </a>
             </div>
           </div>
         </div>
         <div class="socials">
-          <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/AstraProtocol/">
+          <!-- <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/AstraProtocol/">
             <img :src="$withBase('/social/twitter.svg')" alt="twitter" />
-          </a>
+          </a> -->
           <!-- <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/CryptoComOfficial">
             <img :src="$withBase('/social/facebook.svg')" alt="facebook" />
           </a>
@@ -84,7 +80,7 @@
           <!-- <a target="_blank" rel="noopener noreferrer" href="https://discord.com/invite/pahqHz26q4">
             <img :src="$withBase('/social/discord.svg')" alt="discord" />
           </a> -->
-          <a target="_blank" rel="noopener noreferrer" href="https://t.me/AstraProtocol">
+          <a target="_blank" rel="noopener noreferrer" href="https://t.me/AstraOfficialChannel">
             <img :src="$withBase('/social/telegram.svg')" alt="telegram" />
           </a>
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/AstraProtocol/astra">
